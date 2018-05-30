@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html style="background-color:#EDEDED;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type">
+    <title>金革，省钱又赚钱的金融工具</title>
+    <meta name="Description" content="" />
+    <meta name="author" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="mobileOptimized" content="width">
+    <meta name="handheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="shortcut icon" href="/webapp/m/hybrid/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/webapp/m/hybrid/dist/css/hy.css">
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/angular.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/mobile-angular-ui.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/jsencrypt.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/ng-infinite-scroll.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/js/hy.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="payController" class="hybrid">
+    <div style="width:100%;float:left;">
+        <div class="mort-house-header">
+            <div class="mort-margin">
+                <div class="mort-back-icon" ng-click="depositLeft();">
+                    <img src="/webapp/m/hybrid/img/mortgage/back@0.png" width="100%" height="100%"/>
+                </div>
+                <div class="mort-back-content">
+                    {{payTitle}}
+                </div>
+            </div>
+        </div>
+        <div class="mort-cont mrt-45">
+            <div class="pay-box" id="{{payList.product_id}}">
+                <div class="pay-mrt">
+                    <div class="pay-first">
+                        <div class="line-pay-left">
+                            <div class="line-pays"></div>
+                        </div>
+                        <div class="pay-title-center" ng-bind="payList.product_name"></div>
+                        <div class="line-pay-right">
+                            <div class="line-pays"></div>
+                        </div>
+                    </div>
+                    <div class="pay-rst">
+                        <div class="pay-s-left">定金金额</div>
+                        <div class="pay-s-right">￥{{payList.earnest_price}}</div>
+                    </div>
+                    <div class="pay-sel">
+                        <div class="pay-icon0">减</div>
+                        <div class="pay-icon-text0" ng-bind="payList.discount_info"></div>
+                        <p class="pay-p0">定金可冲抵费用，审批前可随时退款</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loads app-content-loading ng-hide" ng-show="loading">
+        <i class="fa fa-spinner loading loading-spinner"></i>
+    </div>
+    <div class="refer-bottom" ng-click="chooseDpay();">
+        <div class="estimate-bottom">
+            支付
+        </div>
+    </div>
+</div>
+<script>
+    /*<![CDATA[*/
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?8f1a760c5bc7050f6dafbb0e9bb78d2d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    /*]]>*/
+</script>
+</body>
+</html>

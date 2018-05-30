@@ -1,0 +1,91 @@
+﻿<div class="scrollable">
+    <div class="scrollable-content">
+        <div class="section" style="padding:0;">
+            <div class="me_header">
+                <div class="radius_lft">
+                    <div class="radius">
+                        <div class="bor"></div>
+                    </div>
+                </div>
+                <div class="radius_rgt">
+                    <div class="me_txt">
+                        点击登录
+                    </div>
+                </div>
+            </div>
+            <div class="me_top">
+                <div class="mrg0">
+                    <div class="mrg_ul">
+                        <ul>
+                            <li>
+                                <a href="#/">
+                                    <div class="li_bor0">
+                                        <p class="col0">0</p>
+                                        <p class="col1">我的收藏</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="li_bor0">
+                                    <p class="col0">普通会员</p>
+                                    <p class="col1">会员等级</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#/">
+                                    <div class="li_bor0" style="border: none;">
+                                        <p class="col0">88</p>
+                                        <p class="col1">我的积分</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column0">
+                <div class="mrt">
+                    <span class="sp0">专属客服</span>
+                    <span class="sp1">业务经理王思聪</span>
+                </div>
+                <div class="col_lines"></div>
+            </div>
+            <div class="column0 lines0">
+                <a href="#/">
+                    <div class="mrt">
+                        <span class="sp0">推荐有奖</span>
+                        <span class="sp1">拿100元现金红包</span>
+                    </div>
+                </a>
+            </div>
+            <div class="column0">
+                <a href="#/">
+                    <div class="mrt">
+                        <span class="sp0">我的红包</span>
+                        <span class="sp1">12个</span>
+                    </div>
+                </a>
+                <div class="col_lines"></div>
+            </div>
+            <div class="column0 lines0">
+                <a href="#/">
+                    <div class="mrt">
+                        <span class="sp0">帮助与反馈</span>
+                    </div>
+                </a>
+            </div>
+            <div class="column0" ng-click="accountSet()">
+                <div class="mrt">
+                    <span class="sp0">设置</span>
+                </div>
+            </div>
+            <div class="column_btn" ng-click="colAccount()">
+                <p class="sp2">为了您的账户安全，请完善密码设置</p>
+            </div>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+
+    </div>
+</div>

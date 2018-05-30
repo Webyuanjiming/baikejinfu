@@ -1,0 +1,103 @@
+﻿<div class="scrollable">
+    <div class="scrollable-content" style="background-color:#EDEDED;">
+        <div style="width:100%;">
+           <div class="broker">
+               <div class="broker-icon">
+                   <img src="/webapp/m/img/gather/img_jjr.png" width="100%" height="100%"/>
+               </div>
+               <p class="broker-icon-txt">一经注册 不可更改</p>
+           </div>
+            <div class="broker-input">
+                <div class="broker-int">
+                    <ul>
+                        <li>
+                            <div class="ker-left">
+                                持卡人
+                            </div>
+                            <div class="ker-right">
+                                <input type="name" name="family_name" placeholder="请输入姓名" ng-model="broker.family_name" ng-change="checkUser(broker)" class="ker-inr" required/>
+                            </div>
+                        </li>
+                        <li ng-show="banUerError">
+                            <div class="li_error">
+                                {{bUerError}}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ker-left">
+                                收款银行卡号
+                            </div>
+                            <div class="ker-right">
+                                <input type="tel" name="incard_num" placeholder="请输入卡号" ng-model="broker.incard_num" ng-change="bankCheck(broker)" class="ker-inr" required/>
+                            </div>
+                        </li>
+                        <li ng-show="bankError">
+                            <div class="li_error">
+                                {{bankError}}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ker-left">
+                                开户银行名称
+                            </div>
+                            <div class="ker-right">
+                                <div class="ker-inr">
+                                    {{bankName}}
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ker-left">
+                                银行预留手机号
+                            </div>
+                            <div class="ker-right">
+                                <input type="tel" placeholder="请输入" class="ker-inr" ng-model="broker.mobile" ng-change="checkPhone(broker)" required/>
+                            </div>
+                        </li>
+                        <li ng-show="phoneError">
+                            <div class="li_error">
+                                {{phoneError}}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ker-left">
+                                身份证号
+                            </div>
+                            <div class="ker-right">
+                                <input type="text" placeholder="请输入" class="ker-inr" ng-model="broker.id_card" ng-change="checkIsCard(broker)" required/>
+                            </div>
+                        </li>
+                        <li ng-show="isCardError">
+                            <div class="li_error">
+                                {{isCardError}}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-text">
+                                <span class="radio_span">
+                                    <input type="checkbox" name="c1" required/>
+                                </span>
+                                <abbr>
+                                    <a ng-href="agree/agreement.html" target="_blank">
+                                        个人信息授权协议
+                                    </a>
+                                </abbr>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+    <footer class="footer_contact">
+        <div class="collect" ng-click="submitReg()">
+            <a target="_blank">提交</a>
+        </div>
+    </footer>
+</div>

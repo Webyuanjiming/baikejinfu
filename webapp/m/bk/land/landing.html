@@ -1,0 +1,60 @@
+﻿<div class="scrollable">
+    <div class="scrollable-content overthrow" style="background-color:#FEE356;">
+        <div style="width:100%;">
+            <div style="position: relative;">
+                <img src="/webapp/m/img/land/land@0.png" style="width:100%;height:100%;">
+                <div class="radius_ig">
+                    <!--<img src="/webapp/m/img/land/radius.png" style="width:100%;height:100%;">-->
+                </div>
+                <div class="land_phone">
+                    <input type="text" class="land_int" placeholder="输入手机号，领取红包" ng-model="user.username" required/>
+                </div>
+                <div class="land_code">
+                    <div class="land_code_left">
+                        <input type="sms" class="code_name" placeholder="请输入验证码" ng-model="user.sms" required/>
+                    </div>
+                    <div class="land_code_right">
+                        <button class="land_code_s" ng-class="{false: 'inactive'}[disable]"  ng-click="packMsg()">{{btnmsg}}</button>
+                    </div>
+                </div>
+                <div class="land_btn" ng-click="sendPack()">
+                    <button type="button" class="ld_btn"></button>
+                </div>
+                <div class="load_section2" ng-click="downApp()">
+                    <div class="section_img1">
+                        <div class="img_load0">
+                            <img src="/webapp/m/img/download/load@2.png" style="width:100%;height:100%;">
+                        </div>
+                    </div>
+                    <div class="section_img2">
+                        <img src="/webapp/m/img/download/load@3.png" style="width:100%;height:100%;">
+                    </div>
+                </div>
+                <!--<p class="land_p">我已阅读并同意百客贷的&nbsp;<a ng-href="http://m.baikejinrong.com/webapp/m/bk/agree/agreement.html" class="">活动规则</a></p>-->
+            </div>
+        </div>
+        <!---<div class="land_icon_bottom">
+            <div class="land_icon">
+                <img src="/webapp/m/img/land/land_icon.png" width="100%" height="100%"/>
+            </div>
+        </div>--->
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+    <div class="scrollable-content ground" ng-show="groundBack"></div>
+    <div class="guide_all" ng-show="groundCont">
+        <div class="guide_lt">
+            <img src="/webapp/m/img/land/guide@lt.png" width="100%" height="100%"/>
+        </div>
+        <div class="guide0">
+            <img src="/webapp/m/img/land/guide@0.png" width="100%" height="100%"/>
+        </div>
+        <div class="guide1" ng-click="guide()">
+            <img src="/webapp/m/img/land/guide@1.png" width="100%" height="100%"/>
+        </div>
+    </div>
+</div>

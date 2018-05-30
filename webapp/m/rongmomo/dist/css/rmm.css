@@ -1,0 +1,70 @@
+﻿/**
+ * @Author:WebYuanJiMing
+ * @city:Zhengzhou/HN,china
+ * @+E-mail:yuanjiming959@163.com
+ * @Date:12/29/2017
+ * @page:rongmomo
+**/
+@charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-weight: normal;
+}
+.mrt {
+    margin: 0 0.5em;
+}
+.ph1 {
+    font-size: 1.5em;
+    line-height: 1.2em;
+    color: #373737;
+    font-family: "SimHei";
+    text-align: center;
+}
+.pag2_txt {
+    width: 100%;
+    height: auto;
+}
+.pag_top {
+    margin-top: 15px;
+}
+.ph2 {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    color: #666;
+    font-family: "SimHei";
+    text-align: center;
+}
+.pag2_p {
+    font-size: 0.91em;
+    font-family: "SimHei";
+    line-height: 1.5em;
+    color: #333333;
+    float: left;
+    width: 100%;
+}
+.ph3 {
+    font-size: 1.0em;
+    line-height: 1.2em;
+    color:#575757;
+    font-family: "SimHei";
+    text-align:left;
+}
+.pag-bottom{
+    width:100%;
+    float:left;
+}
+.rom-img{
+    width:100%;
+    height:auto;
+    float:left;
+    margin-top:15px;
+    margin-bottom:15px;
+}

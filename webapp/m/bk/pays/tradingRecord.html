@@ -1,0 +1,190 @@
+﻿<div class="scrollable">
+    <div class="scrollable-content" style="background-color:#EDEDED;">
+        <div style="width:100%;position:relative;top:-10px;">
+            <div class="crd_record">
+                <ui-state id='activeTab' default='1'></ui-state>
+                <div class="record_lit">
+                    <ul>
+                        <li>
+                           <div class="record_set active" ng-click="loadInvestByType(1)" ui-set="{'activeTab': 1}" ui-class="{'active': activeTab == 1}">
+                               今日
+                           </div>
+                        </li>
+                        <li>
+                            <div class="record_set" ng-click="loadInvestByType(2)" ui-set="{'activeTab': 2}" ui-class="{'active': activeTab == 2}">
+                                一周内
+                            </div>
+                        </li>
+                        <li>
+                            <div class="record_set" ng-click="loadInvestByType(3)" ui-set="{'activeTab': 3}" ui-class="{'active': activeTab == 3}">
+                                一月内
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="record-team" ui-if="activeTab == 1">
+                <div class="team_title">
+                    <p>
+                        共<abbr>{{tradList.num}}</abbr>笔&nbsp;
+                        成功<abbr>{{tradList.sucessnum}}</abbr>笔
+                    </p>
+                </div>
+                <div class="ream_all">
+                    <ul>
+                        <li ng-repeat="tall in orderTall">
+                           <div class="mrt">
+                               <div class="team-list">
+                                   <a ng-href="#/trading?token={{order.session}}&order_id={{tall.order_id}}" target="_blank">
+                                       <p class="team_p0">
+                                           <abbr class="tm_img">
+                                               <img src="/webapp/m/img/gather/img_time.png" width="100%" height="100%"/>
+                                           </abbr>
+                                           <abbr class="tm_text">{{tall.create_time*1000 | date:'yyyy-MM-dd'}}</abbr>
+                                       </p>
+                                       <div class="amounts_list">
+                                           <div class="amt_left">
+                                               <p>支付金额(元)：<abbr>{{tall.amount}}</abbr></p>
+                                               <p>到账金额(元)：<abbr>{{tall.pay_amount}}</abbr></p>
+                                           </div>
+                                           <div class="amt_right">
+                                               <p>手续费(元)：<abbr>{{tall.counter_fee}}</abbr></p>
+                                               <p ng-if="tall.status=='0'"><abbr class="rit_right"></abbr><abbr class="rit_text">交易成功</abbr></p>
+                                               <p ng-if="tall.status=='1'"><abbr class="rit_error"></abbr><abbr class="rit_txt">交易未支付</abbr></p>
+                                               <p ng-if="tall.status=='2'"><abbr class="rit_error"></abbr><abbr class="rit_txt">交易失败</abbr></p>
+                                               <p ng-if="tall.status=='3'"><abbr class="r_error"></abbr><abbr class="rit_txt">交易处理中</abbr></p>
+                                           </div>
+                                           <div class="amt_icon">
+                                               <abbr class="icons_rt"></abbr>
+                                           </div>
+                                       </div>
+                                   </a>
+                               </div>
+                           </div>
+                        </li>
+                    </ul>
+                    <div class="recordMores" ng-show="isData" ng-click="isDataMore()">
+                        加载获取更多
+                    </div>
+                    <div class="recordMores" ng-show="noData">
+                        暂无更新数据
+                    </div>
+                </div>
+            </div>
+            <div class="record-team" ui-if="activeTab == 2">
+                <div class="team_title">
+                    <p>
+                        共<abbr>{{tradList.num}}</abbr>笔&nbsp;
+                        成功<abbr>{{tradList.sucessnum}}</abbr>笔
+                    </p>
+                </div>
+                <div class="ream_all">
+                    <ul>
+                        <li ng-repeat="tall in orderTall">
+                            <div class="mrt">
+                                <div class="team-list">
+                                    <a ng-href="#/trading?token={{order.session}}&order_id={{tall.order_id}}" target="_blank">
+                                        <p class="team_p0">
+                                            <abbr class="tm_img">
+                                                <img src="/webapp/m/img/gather/img_time.png" width="100%" height="100%"/>
+                                            </abbr>
+                                            <abbr class="tm_text">{{tall.create_time*1000 | date:'yyyy-MM-dd'}}</abbr>
+                                        </p>
+                                        <div class="amounts_list">
+                                            <div class="amt_left">
+                                                <p>支付金额(元)：<abbr>{{tall.amount}}</abbr></p>
+                                                <p>到账金额(元)：<abbr>{{tall.pay_amount}}</abbr></p>
+                                            </div>
+                                            <div class="amt_right">
+                                                <p>手续费(元)：<abbr>{{tall.counter_fee}}</abbr></p>
+                                                <p ng-if="tall.status=='0'"><abbr class="rit_right"></abbr><abbr class="rit_text">交易成功</abbr></p>
+                                                <p ng-if="tall.status=='1'"><abbr class="rit_error"></abbr><abbr class="rit_txt">交易未支付</abbr></p>
+                                                <p ng-if="tall.status=='2'"><abbr class="rit_error"></abbr><abbr class="rit_txt">交易失败</abbr></p>
+                                                <p ng-if="tall.status=='3'"><abbr class="r_error"></abbr><abbr class="rit_txt">交易处理中</abbr></p>
+                                            </div>
+                                            <div class="amt_icon">
+                                                <abbr class="icons_rt"></abbr>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="recordMores" ng-show="isData" ng-click="isDataMore()">
+                        加载获取更多
+                    </div>
+                    <div class="recordMores" ng-show="noData">
+                        暂无更新数据
+                    </div>
+                </div>
+            </div>
+            <div class="record-team" ui-if="activeTab == 3">
+                <div class="team_title">
+                    <p>
+                        共<abbr>{{tradList.num}}</abbr>笔&nbsp;
+                        成功<abbr>{{tradList.sucessnum}}</abbr>笔
+                    </p>
+                </div>
+                <div class="ream_all">
+                    <ul>
+                        <li ng-repeat="tall in orderTall">
+                            <div class="mrt">
+                                <div class="team-list">
+                                    <a ng-href="#/trading?token={{order.session}}&order_id={{tall.order_id}}" target="_blank">
+                                        <p class="team_p0">
+                                            <abbr class="tm_img">
+                                                <img src="/webapp/m/img/gather/img_time.png" width="100%" height="100%"/>
+                                            </abbr>
+                                            <abbr class="tm_text">{{tall.create_time*1000 | date:'yyyy-MM-dd'}}</abbr>
+                                        </p>
+                                        <div class="amounts_list">
+                                            <div class="amt_left">
+                                                <p>支付金额(元)：<abbr>{{tall.amount}}</abbr></p>
+                                                <p>到账金额(元)：<abbr>{{tall.pay_amount}}</abbr></p>
+                                            </div>
+                                            <div class="amt_right">
+                                                <p>手续费(元)：<abbr>{{tall.counter_fee}}</abbr></p>
+                                                <p ng-if="tall.status=='0'"><abbr class="rit_right"></abbr><abbr class="rit_text">交易成功</abbr></p>
+                                                <p ng-if="tall.status=='1'"><abbr class="rit_error"></abbr><abbr class="rit_txt">交易未支付</abbr></p>
+                                                <p ng-if="tall.status=='2'"><abbr class="rit_error"></abbr><abbr class="rit_txt">交易失败</abbr></p>
+                                                <p ng-if="tall.status=='3'"><abbr class="r_error"></abbr><abbr class="rit_txt">交易处理中</abbr></p>
+                                            </div>
+                                            <div class="amt_icon">
+                                                <abbr class="icons_rt"></abbr>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="recordMores" ng-show="isData" ng-click="isDataMore()">
+                        加载获取更多
+                    </div>
+                    <div class="recordMores" ng-show="noData">
+                        暂无更新数据
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+    <footer class="footer_cont">
+        <div class="mrt">
+            <div class="foot-ter">
+                <p style="margin-top:8px;">
+                    1.结算周期：交易资金在交易完成后2h内到账 23:00以后的订单在次日到账
+                </p>
+                <p>
+                    2.手续费由支付机构收取，金额以实际收取为准
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>

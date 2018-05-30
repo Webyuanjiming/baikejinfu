@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type">
+    <title>金革，省钱又赚钱的金融工具</title>
+    <meta name="Description" content=""/>
+    <meta name="author" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="mobileOptimized" content="width">
+    <meta name="handheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="shortcut icon" href="/webapp/m/hybrid/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/webapp/m/hybrid/dist/css/hy.css">
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/angular.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/mobile-angular-ui.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/jsencrypt.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/ng-infinite-scroll.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/js/hy.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="processController" class="hybrid">
+    <div style="width:100%;float:left;">
+        <div id="cNodes">
+        </div>
+        <div class="mort-estimate mrt-45">
+            <div class="process-header" ng-click="productHeader();">
+                <div class="process-mrt">
+                    <div class="process-title-left">
+                        <div class="title-ess">{{rsList.product_name}}</div>
+                        <div class="box-ess">
+                            <div class="ess-img">
+                                <div class="box-ess-icon">
+                                    <img ng-src="{{rsList.product_img}}" width="100%" height="100%"/>
+                                </div>
+                            </div>
+                            <div class="box-ess-text">
+                                <div class="ess0" ng-bind="rsList.product_short_desc"></div>
+                                <div class="ess1">
+                                    <a tell="{{rsList.product_tel}}">电话咨询</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="process-title-right">
+                        <div class="pro-img">
+                            <img src="/webapp/m/hybrid/img/mortgage/rigt@back.png" width="100%" height="100%"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="process-content-list">
+                <div class="process-box-cont">
+                    <div class="box-cont-left">
+                        <ul>
+                            <li>
+                                <div class="one-m0 mrt-15">
+                                    <div class="radius-first" ng-class="{true: 'radius-rol', false: 'radius-col'}[numOne]"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="one-m0">
+                                    <div class="radius-first" ng-class="{true: 'radius-rol', false: 'radius-col'}[numTwo]"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="one-m0">
+                                    <div class="radius-first" ng-class="{true: 'radius-rol', false: 'radius-col'}[numThree]"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="one-m0">
+                                    <div class="radius-first" ng-class="{true: 'radius-rol', false: 'radius-col'}[numFour]"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="one-m0">
+                                    <div class="radius-first" ng-class="{true: 'radius-rol', false: 'radius-col'}[numFive]"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="one-m0">
+                                    <div class="radius-first" ng-class="{true: 'radius-rol', false: 'radius-col'}[numSix]"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                                <div class="one-m0">
+                                    <div class="radius-second"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="one-m0">
+                                    <div class="radius-first" ng-class="{true: 'radius-rol', false: 'radius-col'}[numSeven]"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box-cont-right">
+                        <ul>
+                            <li class="mrt-20">
+                                <div class="box-cation">
+                                    <p class="action-one">申请提交成功</p>
+                                    <p class="action-two">{{timeOne*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box-cation">
+                                    <p class="action-one">
+                                        <span class="a-span" ng-bind="loadMsg"></span>
+                                        <span ng-click="modifyUpload();">
+                                            <abbr ng-bind="dspMsg"></abbr>
+                                            <abbr><img src="/webapp/m/hybrid/img/mortgage/or.png" width="100%" height="100%"/></abbr>
+                                        </span>
+                                    </p>
+                                    <p class="action-two" ng-show="timeWrapOne">{{timeTwo*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box-cation">
+                                    <p class="action-one">
+                                        <span class="a-span" ng-bind="deposit"></span>
+                                        <span>
+                                             <b class="br-pr" ng-bind="rsList.discount_info"></b>
+                                        </span>
+                                    </p>
+                                    <p class="action-two" ng-show="timeWrapTwo">{{timeThree*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                                    <p class="action-three rem0" ng-if="rsList.order_status == 30" ng-click="refundClick(rsList);">
+                                        <a ng-bind="refund"></a>
+                                    </p>
+                                    <p class="action-three rem0" ng-if="rsList.order_status != 30">
+                                        <a ng-bind="refund"></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box-cation">
+                                    <p class="action-one">
+                                        <span class="a-span" ng-bind="audit"></span>
+                                    </p>
+                                    <p class="action-two" ng-show="timeWrapThree">{{timeFour*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                                    <p class="action-three">
+                                        房屋评估价值：<abbr>{{rsList.evaluation_price}}</abbr>万&nbsp;&nbsp;可贷额度：<abbr>{{rsList.loan_price}}</abbr>万
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box-cation">
+                                    <p class="action-one">
+                                        <span class="a-span" ng-bind="valuationFee"></span>
+                                    </p>
+                                    <p class="action-two" ng-show="timeWrapFour">{{timeFive*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                                    <p class="action-three rem1" ng-if="rsList.order_status == 50" ng-click="refundOneClick(rsList);">
+                                        <a ng-bind="reimburse"></a>
+                                    </p>
+                                    <p class="action-three rem1" ng-if="rsList.order_status != 50">
+                                        <a ng-bind="reimburse"></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box-cation">
+                                    <p class="action-one">
+                                        <span class="a-span" ng-bind="pledgeMsg"></span>
+                                    </p>
+                                    <p class="action-two" ng-show="timeWrapFive">{{timeSix*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                                </div>
+                            </li>
+                            <li style="height:60px;">
+                                <div class="box-cation">
+                                    <p class="action-one">
+                                        <span class="a-span" ng-bind="facility"></span>
+                                    </p>
+                                    <p class="action-two" ng-show="timeWrapSix">{{timeSeven*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                                </div>
+                            </li>
+                            <li style="height:30px;">
+                                <div class="box-cation">
+                                    <p class="action-one" style="color:#ff524a;" ng-bind="logMsg">
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loads app-content-loading" ng-show="loading">
+        <i class="fa fa-spinner loading loading-spinner"></i>
+    </div>
+    <div class="estimate-bottom" ng-if="rsList.order_status==10" ng-click="upload();">
+        上传资料
+    </div>
+    <div class="estimate-bottom" ng-if="rsList.order_status==20" ng-click="depositPay();">
+        去支付
+    </div>
+<!--<div class="estimate-bottom" ng-if="rsList.order_status==30" ng-click="assessGo();">
+        去评估
+    </div>-->
+	 <div class="estimate-bottom-o" ng-if="rsList.order_status==30">
+        等待审核结果
+    </div>
+    <div class="estimate-bottom" ng-if="rsList.order_status==40" ng-click="payMent();">
+        去支付
+    </div>
+    <div class="estimate-bottom" ng-if="rsList.order_status==60" ng-click="submitLog(rsList);">
+        确认收到贷款
+    </div>
+    <div class="estimate-bottom" ng-if="rsList.is_comment==1 && rsList.order_status==90" ng-click="evaluate();">
+        去评价
+    </div>
+    <div class="estimate-bottom-o" ng-if="rsList.order_status==80">
+        已取消订单
+    </div>
+    <div class="estimate-bottom-o" ng-if="rsList.is_comment==0 && rsList.order_status==90">
+        订单已经完成
+    </div>
+</div>
+<script>
+    /*<![CDATA[*/
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?8f1a760c5bc7050f6dafbb0e9bb78d2d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    /*]]>*/
+</script>
+</body>
+</html>

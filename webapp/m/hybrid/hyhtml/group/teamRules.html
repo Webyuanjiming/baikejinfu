@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>收费说明</title>
+    <meta charset="utf-8"/>
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <meta name="author" content="金革，省钱又赚钱的金融工具" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="mobileOptimized" content="width">
+    <meta name="handheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+    <link rel="shortcut icon" href="/webapp/m/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/webapp/m/hybrid/dist/css/hy.css">
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/angular.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/mobile-angular-ui.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/jsencrypt.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/ng-infinite-scroll.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/js/hy.js"></script>
+</head>
+<body ng-app="myApp">
+        <div style="background-color:#fff;width:100%;height:100%;" ng-controller="payController">
+                <div class="mrt">
+                    <div class="pag2_txt">
+                        <h3 class="ph3" style="margin-top:15px;float: left;">一、成为经纪人</h3>
+                        <p class="pag2_p pag_top" style="margin-left: 15px;">
+                            1.经纪人是指通过推广APP及平台内产品并获得推广收益的用户；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            2.下载注册APP账号，并成功进行实名认证的会员均可成为经纪人。
+                        </p>
+                        <h3 class="ph3" style="margin-top:15px;float: left;">二、经纪人权益</h3>
+                        <p class="pag2_p pag_top" style="margin-left: 15px;">
+                            1、经纪人可使用平台上经纪人收款、贷款申请、信用卡申请等功能；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            2、经纪人可使用平台上的邀请码、产品分享等功能进行客户推介；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            3、销售提成：根据其下级客户办理业务给其的提成，标准随产品而不同；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            4、团队提成：根据其下下级客户办理业务给其的提成，标准随级别而不同；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            5、信用卡、信用贷、经纪人收款业务只有销售提成，没有团队提成。
+                        </p>
+                        <h3 class="ph3" style="margin-top:15px;float: left;">三、经纪人级别</h3>
+                        <p class="pag2_p pag_top" style="margin-left: 15px;">
+                            1.经纪人分为四个级别，分别标注为铜牌、银牌、金牌、钻石经纪人；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            2.级别评定根据过往月份业绩表现，由系统自动评定；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            3.不同级别的销售提成相同，团队提成由低往高依次递增。
+                        </p>
+                        <h3 class="ph3" style="margin-top:15px;float: left;">四、提成发放</h3>
+                        <p class="pag2_p pag_top" style="margin-left: 15px;">
+                            1.提成在平台确认业务完成后自动入账经纪人账户；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            2.经纪人可在我的团队及我的账户中“收入”一栏查看提成信息；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            3.经纪人在我的账户中可操作“结算”，将账户收入结算至其银行账户中。
+                        </p>
+                        <h3 class="ph3" style="margin-top:15px;float: left;">五、举例说明</h3>
+                        <p class="pag2_p pag_top" style="margin-left: 15px;">
+                            1、若A推介了30个注册用户，其中没人又推介了30个注册用户，则：
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            2、A的下级有30个用户，下下级有900个用户；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            3、若每10个用户有一人成功办理了一笔100万的房抵贷业务，则：
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            4、A的销售业绩为300万，团队业绩为9000万；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            5、按照房抵贷销售提成2.0‰、团队提成30%的标准，则：
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            6、A的销售提成为：300万*2.0‰ = 6000元；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            7、A的团队提成为：9000万*2.0‰*30% = 5.4万元；
+                        </p>
+                        <p class="pag2_p" style="margin-left: 15px;">
+                            8、A的本月收入为：6万元。
+                        </p>
+                        <h3 class="ph3" style="margin-top:15px;float: left;text-align:center;width:100%;">标准销售提成表：</h3>
+                        <div class="rom-img">
+                            <img src="/webapp/m/hybrid/img/mortgage/rule@01.png" width="100%" height="100%"/>
+                        </div>
+                        <h3 class="ph3" style="margin-top:15px;float: left;text-align:center;width:100%;">经纪人级别权益表：</h3>
+                        <div class="rom-img">
+                            <img src="/webapp/m/hybrid/img/mortgage/rule@02.png" width="100%" height="100%"/>
+                        </div>
+                        <div class="pag-bottom" style="padding-bottom:30px;">
+                            <p class="pag2_p" style="text-align:center;">
+                                在法律许可的合法范畴内 
+                            </p>
+                           <!-- <p class="pag2_p" style="text-align:center;">
+                                本内容最终解释权归诚承金融所有
+                            </p>
+                            <p class="pag2_p" style="text-align:center;">
+                                河南诚承金融服务股份有限公司 版权所有
+                            </p>-->
+                            <!--<p class="pag2_p" style="text-align:center;">
+                                豫ICP备17032607号
+                            </p>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            /*<![CDATA[*/
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?8f1a760c5bc7050f6dafbb0e9bb78d2d";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+            /*]]>*/
+        </script>
+</body>
+</html>

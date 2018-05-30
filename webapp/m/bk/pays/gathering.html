@@ -1,0 +1,119 @@
+﻿<div class="scrollable">
+    <div class="scrollable-content" style="background-color:#EDEDED;">
+        <div style="width:100%;">
+            <div style="position: relative;top:0;">
+                <div class="gather">
+                    <h3>经纪人收款</h3>
+                    <div class="gar-icon" ng-if="incard==0">
+                        <div class="gather-icon">
+                            <div class="gather-nick-img" ng-if="pysAll.ico==''">
+                                <img ng-src="/webapp/m/img/gather/nick@icon.png" width="100%" height="100%"/>
+                            </div>
+                            <div class="gather-nick-img" ng-if="!pysAll.ico==''">
+                                <img ng-src="{{pysAll.ico}}" width="100%" height="100%"/>
+                            </div>
+                            <a ng-href="#/broker?token={{pys.session}}">
+                                <div class="gather-txt">
+                                    请完成经纪人认证
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gar-icon" ng-if="incard==1">
+                        <div class="gather-icon">
+                            <div class="gather-nick-img">
+                                <img ng-src="{{pysAll.ico}}" width="100%" height="100%"/>
+                            </div>
+                           <div class="gather-name">
+                               <p>真实姓名：<abbr>{{pysAll.true_name}}</abbr></p>
+                               <p>商户编号：<abbr>{{pysAll.marchant_code}}</abbr></p>
+                               <a ng-href="#/credentials?token={{pys.session}}">
+                                   <div class="gather-person">
+                                       认证信息
+                                   </div>
+                               </a>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="gather_bom"></div>
+                </div>
+                <div class="record-list">
+                    <ul>
+                        <li ng-if="incard==1">
+                            <a href="#/tradingrecord?token={{pys.session}}" target="_blank">
+                                <div class="deal">
+                                    <div class="deal_img">
+                                        <img src="/webapp/m/img/gather/img_jilu.png" width="100%" height="100%"/>
+                                    </div>
+                                    <div class="deal-txt">
+                                        交易记录
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li ng-if="incard==0">
+                           <div class="deal">
+                                <div class="deal_img">
+                                    <img src="/webapp/m/img/gather/img_jilu.png" width="100%" height="100%"/>
+                                </div>
+                                <div class="deal-txt">
+                                    交易记录
+                                </div>
+                           </div>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <div class="deal">
+                                    <div class="deal_img">
+                                        <img src="/webapp/m/img/gather/img_help.png" width="100%" height="100%"/>
+                                    </div>
+                                    <div class="deal-txt">
+                                        使用帮助
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gather-line"></div>
+                <div class="gather-input">
+                    <div class="int_money">
+                        <div class="mon_left">
+                            ¥
+                        </div>
+                        <div class="mon_right">
+                            <input type="tel" class="mont" ng-model="amount" ng-change="amountChange(amount)" placeholder="单笔不少于100元  最多不超过20000元"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="gather-bom-txt">
+                    <div class="bt0">
+                        <div class="bto-icon">
+                            <img src="/webapp/m/img/gather/icon_tip.png" width="100%" height="100%"/>
+                        </div>
+                        <div class="bto-text">
+                            <p>1、交易限额：单笔500至20000元，单卡单日不超过50000元。</p>
+                            <p>2、到账时间：00:00至21:30交易当天到账，其它时段第二天到账。</p>
+                            <p>3、交易费率：刷卡手续费为0.49%，即时到帐另加2元/笔。</p>
+                            <p>4、手续费由支付机构收取，支付机构会不定时的更改交易规则，请及时关注。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+    <footer class="footer_contact">
+        <div class="collect" ng-show="atsPay" ng-click="mediate()">
+            <a>立即收款</a>
+        </div>
+        <div class="collect0" ng-show="etsPay">
+            <a class="">立即收款</a>
+        </div>
+    </footer>
+</div>

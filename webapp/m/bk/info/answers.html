@@ -1,0 +1,93 @@
+﻿<div class="scrollable">
+    <div class="scrollable-content">
+        <div style="background-color:#fff;width:100%;">
+            <div style="position: relative;top:15px;">
+                <div class="mrt">
+                    <h3 class="info_pr">
+                        {{attenList.title}}
+                    </h3>
+                    <h3 class="info_pr">
+                        {{attenList.content}}
+                    </h3>
+                    <div class="info-img" ng-repeat="ims in ImgList" ng-show="imgSom">
+                        <img ng-src="{{ims.url}}" width="100%" height="100%"/>
+                    </div>
+                    <div class="q_stion">
+                        <p><abbr>{{attenList.nickname}}</abbr>·<abbr>{{attenList.answers}}</abbr>个回答</p>
+                    </div>
+                    <div ng-show="imgLoading" class="img-cot-loading">
+                        <i class="fa fa-spinner fa-spin loading-spinner"></i>
+                    </div>
+                </div>
+                <div class="author_list">
+                    <div class="mrt">
+                        <div class="lit-cont">
+                            <ul>
+                                <li>
+                                    <div class="li_modal" ng-click="attention()">
+                                        <abbr class="abbr_img"><img src="/webapp/m/images/add.png" width="100%" height="100%"/></abbr>
+                                        <abbr class="abbr_txt">关注作者</abbr>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="li_modal" ng-click="attention()">
+                                        <abbr class="abbr0_img"><img src="/webapp/m/images/add@person.png" width="100%" height="100%"/></abbr>
+                                        <abbr class="abbr0_txt">邀请回答</abbr>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumb_list">
+                    <ul>
+                        <li ng-repeat="ins in InfoList">
+                            <div class="thumb_mrg">
+                                <div class="mub">
+                                    <div class="thumb_mrg_lt">
+                                        <div class="umb">
+                                            <img ng-src="{{ins.ico}}" width="100%" height="100%"/>
+                                        </div>
+                                    </div>
+                                    <div class="thumb_mrg_rt">
+                                        <p class="icon_title">
+                                            {{ins.nickname}}
+                                        </p>
+                                        <p class="ic-cont">{{ins.content}}</p>
+                                        <div class="ic-bar">
+                                            <div class="ic-bar-left">
+                                                <abbr>{{ins.create_time*1000 | date:'yyyy-MM-dd'}}</abbr><b>·</b><abbr ng-click="attention()">回复</abbr>
+                                            </div>
+                                            <div class="ic-bar-right">
+                                                <div class="info_all">
+                                                    <div class="info-thumb" ng-click="attention()">
+                                                        <img src="/webapp/m/images/thumb.png" width="100%" height="100%">
+                                                    </div>
+                                                    <div class="thumb-txt">
+                                                        {{ins.likes}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inf-lines"></div>
+                        </li>
+                    </ul>
+                    <div class="off-lines">
+                        -该内容仅属于用户观点-
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+    <div class="off-bottom" ng-click="attention()">
+        <div class="reply">
+            回复：我想有钱
+        </div>
+    </div>
+</div>

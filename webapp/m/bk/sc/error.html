@@ -1,0 +1,47 @@
+﻿<style type="text/css">
+    .error-more{
+        width:100px;
+        height:100px;
+        margin: 0 auto;
+    }
+    .error-mo-text{
+        width: 100%;
+        font-size:1.0em;
+        line-height:1.25em;
+        color:#4A91FB;
+        font-family:"SimHei";
+        text-align:center;
+    }
+    .error-bns{
+        width:80px;
+        height:35px;
+        border-radius:5px;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        margin:28px auto 0 auto;
+        font-size:1.0em;
+        line-height:35px;
+        color:#4A91FB;
+        font-family:"SimHei";
+        text-align:center;
+        border:1px solid #4A91FB;
+    }
+</style>
+<div class="scrollable">
+    <div class="scrollable-content">
+        <div style="background-color:#fff;width:100%;">
+            <div class="error-more">
+                <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1512715016950" class="icon" style="" viewBox="0 0 1339 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1454" xmlns:xlink="http://www.w3.org/1999/xlink" width="261.5234375" height="200"><defs><style type="text/css"></style></defs><path d="M17.591795 900.437333c165.861744-198.235897 382.424615-259.413333 639.921231-259.413333 255.894974 0 473.140513 61.860103 641.864205 261.382564 12.813128 14.467282 19.140923 33.030564 17.854359 52.250257-1.312821 19.692308-10.502564 37.756718-25.96759 51.094974a69.526974 69.526974 0 0 1-46.788923 18.248205 72.021333 72.021333 0 0 1-55.033436-26.282667c-138.817641-165.940513-315.339487-208.580923-530.143179-208.580923-213.280821 0-389.828923 42.64041-530.011898 208.397128a76.406154 76.406154 0 0 1-57.238974 25.862565 68.97559 68.97559 0 0 1-46.526359-17.644308c-30.667487-27.831795-34.15959-74.069333-7.955693-105.314462zM206.375385 256.157538c-71.391179 0-129.234051-57.344-129.234052-128.078769S134.957949 0 206.375385 0c71.364923 0 129.234051 57.344 129.234051 128.078769S277.740308 256.157538 206.375385 256.157538z m852.939487 0c-71.364923 0-129.234051-57.344-129.234051-128.078769S987.949949 0 1059.314872 0c71.391179 0 129.234051 57.344 129.234051 128.078769s-57.842872 128.078769-129.234051 128.078769z" fill="#4A91FB" p-id="1455"></path></svg>
+            </div>
+            <p class="error-mo-text" style="margin-top: 10px;">不好意思，出现错误了，请重新尝试。</p>
+            <p class="error-mo-text">如果还有问题请与我们联系</p>
+            <div class="error-bns" ng-click="homeErrorClick()">
+                返回首页
+            </div>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+
+</div>

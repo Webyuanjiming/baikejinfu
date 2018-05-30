@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type">
+    <title>金革，省钱又赚钱的金融工具</title>
+    <meta name="Description" content=""/>
+    <meta name="author" content="金革，省钱又赚钱的金融工具"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="mobileOptimized" content="width">
+    <meta name="handheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="shortcut icon" href="/webapp/m/hybrid/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/webapp/m/hybrid/dist/css/hy.css">
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/angular.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/mobile-angular-ui.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/jsencrypt.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/ng-infinite-scroll.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/js/hy.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="speedLoansController" class="hybrid">
+    <div style="width:100%;float:left;">
+        <div id="cNodes">
+        </div>
+        <div class="mort-cont mrt-45">
+            <ul>
+                <li style="margin-bottom:0;">
+                    <div class="mort-div">
+                        <p class="mort-p0"><abbr class="abbr-0">{{aboutList.p_name}}</abbr><abbr class="abbr-1" increment-number incnum="aboutList.inv_num"></abbr>人申请</p>
+                        <div class="mort-box-list">
+                            <div class="det-icon">
+                                <img ng-src="{{aboutList.pic}}" width="100%" height="100%" id="aboutList.id"/>
+                            </div>
+                            <div class="mort-center">
+                                <div class="mort-left">
+                                    <p class="mrt0">{{aboutList.min_rate}}%</p>
+                                    <p class="mrt1">预期利率/月</p>
+                                </div>
+                                <div class="mort-right">
+                                    <p class="mrt2" ng-bind="aboutList.short_desc"></p>
+                                    <p class="mrt3">参考额度：<abbr ng-bind="aboutList.min_limit"></abbr><abbr>-</abbr><abbr ng-bind="aboutList.max_limit"></abbr>万</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="details-tab-box">
+            <div class="details-tab-slider">
+                <ui-state id='activeTab' default='1'></ui-state>
+                <div class="tab-slider">
+                    <div class="tab_li" ng-if="tabAll[0].tabName==1">
+                        <div ui-set="{'activeTab': 1}" ui-class="{'active': activeTab == 1}"
+                             class="btn-default-tab active">
+                            {{tabAll[0].tabValue}}
+                        </div>
+                    </div>
+                    <div class="tab_li" ng-if="tabAll[1].tabName==2">
+                        <div ui-set="{'activeTab': 2}" ui-class="{'active': activeTab == 2}" class="btn-default-tab">
+                            {{tabAll[1].tabValue}}
+                        </div>
+                    </div>
+                    <div class="tab_li" ng-if="tabAll[2].tabName==3">
+                        <div ui-set="{'activeTab': 3}" ui-class="{'active': activeTab == 3}" class="btn-default-tab">
+                            {{tabAll[2].tabValue}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="details-cont-ben">
+                <div ui-if="activeTab == 1">
+                    <div ng-if="tabAll[0].tabValue=='等额本金'">
+                        <div class="det-left">
+                            <p class="det-ps0">每月还额</p>
+                            <p class="det-ps1"><abbr>{{toMonthEqual}}</abbr></p>
+                            <p class="det-ps2">每个月逐额递减<b ng-bind="decrease| number:1"></b>元</p>
+                        </div>
+                        <div class="det-right">
+                            <p class="det-ps3">总利息（元）</p>
+                            <p class="det-ps4">{{gross}}</p>
+                        </div>
+                    </div>
+                    <div ng-if="tabAll[0].tabValue=='等额本息'">
+                        <div class="det-left">
+                            <p class="det-ps0">每月还额</p>
+                            <p class="det-ps1"><abbr>{{toMonthMoney}}</abbr></p>
+                        </div>
+                        <div class="det-right">
+                            <p class="det-ps3">总利息（元）</p>
+                            <p class="det-ps4">{{instAll}}</p>
+                        </div>
+                    </div>
+                    <div ng-if="tabAll[0].tabValue=='先息后本'">
+                        <div class="det-left">
+                            <p class="det-ps0">每月还额</p>
+                            <p class="det-ps1"><abbr>{{monthlyInst}}</abbr></p>
+                            <p class="det-ps2">最后一个月利息+本金</p>
+                        </div>
+                        <div class="det-right">
+                            <p class="det-ps3">总利息（元）</p>
+                            <p class="det-ps4">{{allGross}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div ui-if="activeTab == 2">
+                    <div ng-if="tabAll[1].tabValue=='等额本金'">
+                        <div class="det-left">
+                            <p class="det-ps0">每月还额</p>
+                            <p class="det-ps1"><abbr>{{toMonthEqual}}</abbr></p>
+                            <p class="det-ps2">每个月逐额递减<b ng-bind="decrease| number:1"></b>元</p>
+                        </div>
+                        <div class="det-right">
+                            <p class="det-ps3">总利息（元）</p>
+                            <p class="det-ps4">{{gross}}</p>
+                        </div>
+                    </div>
+                    <div ng-if="tabAll[1].tabValue=='等额本息'">
+                        <div class="det-left">
+                            <p class="det-ps0">每月还额</p>
+                            <p class="det-ps1"><abbr>{{toMonthMoney}}</abbr></p>
+                        </div>
+                        <div class="det-right">
+                            <p class="det-ps3">总利息（元）</p>
+                            <p class="det-ps4">{{instAll}}</p>
+                        </div>
+                    </div>
+                    <div ng-if="tabAll[1].tabValue=='先息后本'">
+                        <div class="det-left">
+                            <p class="det-ps0">每月还额</p>
+                            <p class="det-ps1"><abbr>{{monthlyInst}}</abbr></p>
+                            <p class="det-ps2">最后一个月利息+本金</p>
+                        </div>
+                        <div class="det-right">
+                            <p class="det-ps3">总利息（元）</p>
+                            <p class="det-ps4">{{allGross}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div ui-if="activeTab == 3">
+                    <div ng-if="tabAll[2].tabValue=='等额本金'">
+                        <div class="det-left">
+                            <p class="det-ps0">每月还额</p>
+                            <p class="det-ps1"><abbr>{{toMonthEqual}}</abbr></p>
+                            <p class="det-ps2">每个月逐额递减<b ng-bind="decrease| number:1"></b>元</p>
+                        </div>
+                        <div class="det-right">
+                            <p class="det-ps3">总利息（元）</p>
+                            <p class="det-ps4">{{gross}}</p>
+                        </div>
+                    </div>
+                    <div ng-if="tabAll[2].tabValue=='等额本息'">
+                        <div class="det-left">
+                            <p class="det-ps0">每月还额</p>
+                            <p class="det-ps1"><abbr>{{toMonthMoney}}</abbr></p>
+                        </div>
+                        <div class="det-right">
+                            <p class="det-ps3">总利息（元）</p>
+                            <p class="det-ps4">{{instAll}}</p>
+                        </div>
+                    </div>
+                    <div ng-if="tabAll[2].tabValue=='先息后本'">
+                        <div class="det-left">
+                            <p class="det-ps0">每月还额</p>
+                            <p class="det-ps1"><abbr>{{monthlyInst}}</abbr></p>
+                            <p class="det-ps2">最后一个月利息+本金</p>
+                        </div>
+                        <div class="det-right">
+                            <p class="det-ps3">总利息（元）</p>
+                            <p class="det-ps4">{{allGross}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="det-select-left">
+                    <div class="det-selects">
+                        <label class="det-label0">金额</label>
+                        <div class="label-input">
+                            <input type="text" class="det-input-text" ng-model="labelMoney" ng-change="labelChange(labelMoney)" required/>
+                            <label class="det-label1">万</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="det-select-right">
+                    <div class="det-selects">
+                        <label class="det-label0">期限</label>
+                        <div class="label-input">
+                            <div class="label-select-all">
+                                <!--<div class="select-ground"></div>-->
+                                <select name="nameList" class="sect" ng-model="slectCge" ng-change="change(slectCge);"
+                                        ng-init="slectCge='0';change(slectCg)">
+                                    <option value="{{months.numId}}" id="{{months.number}}" ng-repeat="months in monthsList">{{months.days}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="line-det"></div>
+            <div class="tails-text-col0">
+                <div class="tails-mrg">
+                    <p ng-bind="aboutList.description"></p>
+                </div>
+            </div>
+            <div class="line-det"></div>
+            <div class="content-box">
+                <div class="conts-box">
+                    <h3 class="ten-h3">申请条件</h3>
+                    <p class="cts0" ng-bind="aboutList.sqtj"></p>
+                </div>
+                <div class="conts-box">
+                    <h3 class="ten-h3">所需材料</h3>
+                    <p class="cts0" ng-bind="aboutList.sxcl"></p>
+                </div>
+                <div class="conts-box">
+                    <h3 class="ten-h3">注意事项</h3>
+                    <p class="cts0" ng-bind="aboutList.zysx"></p>
+                </div>
+                <div class="conts-box">
+                    <h3 class="ten-h3">所需费用</h3>
+                    <p class="cts0" ng-bind="aboutList.charge_details"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loads app-content-loading" ng-show="loading">
+        <i class="fa fa-spinner loading loading-spinner"></i>
+    </div>
+    <div class="modal-mask-layer" ng-show="maskLayer"></div>
+    <div class="modal" style="position:absolute;width:100%;top:16em;" ng-show="modalBox">
+        <div class="modal-backdrop in"></div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" ng-click="layerClose();">
+                        ×
+                    </button>
+                    <h4 class="modal-title">温馨提示：</h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="modalMask"></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="refer-bottom">
+        <a href="tel:{{aboutList.tel}}">
+            <div class="refer-icon-fir">
+                <div class="consult-icon"><img src="/webapp/m/hybrid/img/mortgage/mort@0.png" width="100%" height="100%"/></div>
+                <p class="consult-p">联系客服</p>
+            </div>
+        </a>
+        <div class="enshrine" ng-click="enShrine(1);" ng-show="ensOne">
+            <div class="mor-icon"></div>
+            <p class="consult-p">收藏</p>
+        </div>
+        <div class="enshrine" ng-click="inShrine(2);" ng-show="ensTwo">
+            <div class="mor-icon0"></div>
+            <p class="consult-p">取消收藏</p>
+        </div>
+        <div class="enshrine-icon-right" ng-click="oncePut();">
+            立即申请
+        </div>
+    </div>
+</div>
+<script>
+    /*<![CDATA[*/
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?8f1a760c5bc7050f6dafbb0e9bb78d2d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    /*]]>*/
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿<div class="scrollable" style="background-color:#EDEDED;">
+    <div class="scrollable-content">
+        <div style="width:100%;">
+            <div class="credentails">
+                <div class="mrt">
+                    <div class="cred_list">
+                        <ul>
+                            <li>
+                                <div class="cre_li_left">
+                                    订单金额：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{selectInfo.amount}}元
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    商户编号：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{selectsInfo.marchant_code}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    结算账号：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{selectsInfo.incard_num}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    交易类型：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{selectsInfo.paytype}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="cre_add_all">
+                <a href="#/payscard?token={{selectInfo.session}}&amount={{selectInfo.amount}}">
+                    <div class="cre_add">
+                    <span>
+                        <img src="/webapp/m/img/gather/img_user3.png" width="100%" height="100%"/>
+                    </span>
+                        <abbr>
+                            添加付款卡
+                        </abbr>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="paysList" ng-show="outPays">
+            <ul>
+                <li ng-repeat="ods in outcard track by $index" ng-click="selectCard($index)">
+                    <div class="pys coord{{$index}}">
+                        <div class="pys-icon">
+                            <img ng-src="{{ods.bank_ico}}" width="100%" height="100%"/>
+                        </div>
+                        <div class="pys-title">
+                            {{ods.bank_name}}
+                        </div>
+                        <div class="pys-card">
+                            {{ods.outcard_num}}
+                        </div>
+                        <div class="pys-btn pysIcon" ng-if="$index==0"></div>
+                        <div class="pys-btn" ng-if="$index!==0"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+    <footer class="footer_contact">
+        <div class="collect" ng-show="nextStepOne" ng-click="nextStep()">
+            <a href="" target="_blank">下一步</a>
+        </div>
+        <div class="collect0" ng-show="nextStepTwo">
+            <a href="" target="_blank">下一步</a>
+        </div>
+    </footer>
+</div>

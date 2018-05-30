@@ -1,0 +1,57 @@
+﻿<div class="scrollable">
+    <div class="scrollable-content">
+        <div style="background-color:#fff;width:100%;">
+            <div class="credit">
+                <ul>
+                    <!--<li ng-repeat="cre in creList track by $index" ng-click="cardClick($index)">
+                        <div class="card_list">
+                            <div class="mrt rel">
+                                <div class="credit_icon">
+                                    <img ng-src="{{cre.icon}}" id="{{cre.id}}" width="100%" height="100%"/>
+                                </div>
+                                <div class="credit_tent">
+                                    <p class="cre_p0">{{cre.title}}</p>
+                                    <p class="cre_p1">{{cre.content}}</p>
+                                    <p class="cre_p2"><b><abbr>{{cre.inv_num}}</abbr>万人</b>本月申请</p>
+                                </div>
+                                <div class="cc_icon" ng-if="cre.top=='1'">
+                                    {{$index+1}}
+                                </div>
+                            </div>
+                        </div>
+                    </li>-->
+                    <li ng-click="cardClick()">
+                        <div class="card_list">
+                            <div class="mrt rel">
+                                <div class="credit_icon">
+                                    <img ng-src="{{creList.icon}}" id="{{creList.id}}" width="100%" height="100%"/>
+                                </div>
+                                <div class="credit_tent">
+                                    <p class="cre_p0">{{creList.title}}</p>
+                                    <p class="cre_p1">{{creList.content}}</p>
+                                    <p class="cre_p2"><b><abbr>{{creList.inv_num}}</abbr>万人</b>本月申请</p>
+                                </div>
+                                <div class="cc_icon" ng-if="cre.top=='1'">
+                                    {{$index+1}}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+               <!-- <div class="credit_more" ng-click="creditMore()" ng-show="creMore">
+                    加载获取更多
+                </div>
+                <div class="credit_more" ng-show="noMore" style="padding-top:20px;">
+                    暂无数据
+                </div>-->
+            </div>
+        </div>
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+
+</div>

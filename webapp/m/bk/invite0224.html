@@ -1,0 +1,84 @@
+﻿<div class="scrollable">
+    <div class="scrollable-content overthrow">
+        <div style="background-color:#fff;width:100%;">
+            <div>
+                <img src="/webapp/m/img/invite/header.png" style="width:100%;height:100%;">
+            </div>
+            <div class="invite_div">
+                <div class="vite_box">
+                    <div class="vite_lt">
+                        <div class="star">
+                            <img src="/webapp/m/img/invite/star.png" width="100%" height="100%"/>
+                        </div>
+                        <div class="star_img">
+                            <img src="/webapp/m/img/invite/one@0.png" width="100%" height="100%"/>
+                        </div>
+                    </div>
+                    <div class="vite_txt">
+                        {{iNum}}
+                    </div>
+                    <div class="vite_rg">
+                        <div class="person">
+                            <img src="/webapp/m/img/invite/person.png" width="100%" height="100%"/>
+                        </div>
+                        <div class="star_rt">
+                            <img src="/webapp/m/img/invite/star.png" width="100%" height="100%"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="vite_box" style="margin-top:15px;margin-bottom: 15px;">
+                    <div class="vite_lt">
+                        <div class="star">
+                            <img src="/webapp/m/img/invite/star.png" width="100%" height="100%"/>
+                        </div>
+                        <div class="star_img">
+                            <img src="/webapp/m/img/invite/one@1.png" width="100%" height="100%"/>
+                        </div>
+                    </div>
+                    <div class="vite_txt">
+                        {{mymoney}}
+                    </div>
+                    <div class="vite_rt">
+                        <div class="star_rt">
+                            <img src="/webapp/m/img/invite/star.png" width="100%" height="100%"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="vite_bx">
+                    <div class="vite_list">
+                        <section class="sect" ng-repeat="invites in inviteList">
+                            <div class="lst">
+                                <ul>
+                                    <li class="col0">{{invites.ordername}}</li>
+                                    <li class="col1">{{invites.user}}</li>
+                                    <li class="col2">奖励</li>
+                                    <li class="col3"><abbr>{{invites.getmoney}}</abbr>元</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="vite_bx">
+                    <div class="vte_lft">
+                        <button type="button" class="lt_img" ng-click="inviteImg()">
+
+                        </button>
+                    </div>
+                    <div class="vte_rgt">
+                        <button type="button" class="rt_img" ng-click="inviteParams()">
+
+                        </button>
+                    </div>
+                </div>
+                <p class="laws">活动细则</p>
+            </div>
+        </div>
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+
+</div>

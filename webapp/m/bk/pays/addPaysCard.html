@@ -1,0 +1,56 @@
+﻿<div class="scrollable">
+    <div class="scrollable-content" style="background-color:#EDEDED;">
+        <div style="width:100%;">
+           <div class="payscard">
+               <div class="broker-icon">
+                   <img src="/webapp/m/img/gather/img_fk.png" width="100%" height="100%"/>
+               </div>
+               <p class="payscard-icon-txt">至少添加一张信用卡</p>
+               <p class="payscard-icon-txt">添加的银行卡账户名须与注册信息同名</p>
+           </div>
+            <div class="broker-input">
+                <div class="broker-int" style="margin-bottom:0;">
+                    <ul>
+                        <li>
+                            <div class="ker-left">
+                                银行卡卡号
+                            </div>
+                            <div class="ker-right">
+                                <input type="tel" placeholder="请输入付款卡号" ng-model="paysCard.card_num" ng-change="bankCheck(paysCard)" class="ker-inr"/>
+                            </div>
+                        </li>
+                        <li ng-show="isPyError">
+                            <div class="li_error">
+                                {{paysError}}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ker-left">
+                                银行预留手机号
+                            </div>
+                            <div class="ker-right">
+                                <input type="tel" placeholder="请输入" ng-model="paysCard.mobile" ng-change="mobileCheck(paysCard)" class="ker-inr"/>
+                            </div>
+                        </li>
+                        <li ng-show="isMobileError">
+                            <div class="li_error">
+                                {{mobileError}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+    <footer class="footer_contact">
+        <div class="collect" ng-click="addPays()">
+            <a href="" target="_blank">完成</a>
+        </div>
+    </footer>
+</div>

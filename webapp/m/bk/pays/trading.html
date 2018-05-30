@@ -1,0 +1,101 @@
+﻿<div class="scrollable">
+    <div class="scrollable-content" style="background-color:#EDEDED;">
+        <div style="width:100%;">
+            <h3 class="credentials_h3">交易详情</h3>
+            <div class="credentails cre_mrg0">
+                <div class="mrt">
+                    <div class="cred_list">
+                        <ul>
+                            <li>
+                                <div class="cre_li_left">
+                                    商户编号：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{tradList.marchant_code}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    订单状态：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{tradList.status}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    订单编号：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{tradList.order_id}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    发卡行：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{tradList.outcard_num}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    收单行：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{tradList.incard_num}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    订单金额：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{tradList.amount}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    到账金额：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{tradList.pay_amount}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    交易手续费：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{tradList.counter_fee}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    交易时间：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{tradList.create_time*1000 | date:'yyyy-MM-dd'}}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cre_li_left">
+                                    交易类型：
+                                </div>
+                                <div class="cre_li_right">
+                                    {{tradList.pay_type}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+    </div>
+</div>

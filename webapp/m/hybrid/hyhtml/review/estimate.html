@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type">
+    <title>金革，省钱又赚钱的金融工具</title>
+    <meta name="Description" content=""/>
+    <meta name="author" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="mobileOptimized" content="width">
+    <meta name="handheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="shortcut icon" href="/webapp/m/hybrid/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/webapp/m/hybrid/dist/css/hy.css">
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/angular.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/mobile-angular-ui.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/jsencrypt.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/libs/js/ng-infinite-scroll.min.js"></script>
+    <script type="text/javascript" src="/webapp/m/hybrid/dist/js/hy.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="reviewController" class="hybrid">
+    <div style="width:100%;float:left;">
+        <div style="width:100%;float:left;">
+            <div id="cNodes">
+			</div>
+            <div class="mort-estimate mrt-45">
+                <div class="estimate-header">
+                    <div class="starts" data-ng-init="load();">
+                        <div class="mate-ping">
+                            选择评分
+                        </div>
+                        <ul id="pingStar">
+                            <li rel="1" class=""></li>
+                            <li rel="2" class=""></li>
+                            <li rel="3" class=""></li>
+                            <li rel="4" class=""></li>
+                            <li rel="5" class=""></li>
+                        </ul>
+                        <input type="hidden" value="" id="startP">
+                    </div>
+                </div>
+                <div class="text-int-timate">
+                    <div class="mate-area">
+                        <div class="mrts" style="height:120px;">
+                            <textarea id="d1" name='d1' rows="2" cols="20" class="area" ng-keyup="myKey($event);"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-m">请您输入15字以上评价</p>
+            </div>
+            <p class="text-ms" ng-bind="discussMessage"></p>
+        </div>
+        <div class="loads app-content-loading">
+            <i class="fa fa-spinner loading loading-spinner"></i>
+        </div>
+        <div class="estimate-bottom" ng-click="discussClick();">
+            发表评论
+        </div>
+    </div>
+</div>
+<script>
+    /*<![CDATA[*/
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?8f1a760c5bc7050f6dafbb0e9bb78d2d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    /*]]>*/
+</script>
+</body>
+</html>

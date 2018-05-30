@@ -1,0 +1,16 @@
+﻿<div class="scrollable" >
+    <div class="scrollable-content" style="background-color: #FFF;">
+        <div class="scroll-calendar">
+            <div jj-calender select-month="selectMonth" select-days="selectDays"  on-prevs-month="prevsMonth(data)" on-current-month="curMonth(data)" on-next-month="nextMonth(data)" on-one-click="dateFilter(date);" store="calStore">
+            </div>
+            <div class="cor_len"></div>
+        </div>
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div ui-content-for="modals">
+            <div ng-include="'/webapp/m/bk/common.html'"></div>
+        </div>
+
+    </div>
+</div>

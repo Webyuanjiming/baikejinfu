@@ -1,0 +1,61 @@
+<div class="calender">
+    <div class="tails">
+        <div class="details_top">
+            <div class="tis_lt" ng-click="previousMonth();"></div>
+            <div class="tis_ctr"><a ng-click="currentMonth();">{{year}}年{{month}}月</a></div>
+            <div class="tis_gt" ng-click="nextMonth();"></div>
+        </div>
+    </div>
+    <div class="all_days">
+        <div class="weeks">
+            <table class="table_week">
+                <thead>
+                    <tr>
+                        <th ng-repeat="day in daysOfTheWeek">周{{day}}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="days">
+            <table class="days_table">
+                <tbody>
+                    <tr>
+                        <th ng-repeat="day in days">
+                            <!--class="gift_all"-->
+                            <div ng-class="{'fb-all':{{day.isToday==true}},'fb38':{{day.isRecover==true}},'fb01':{{day.onMonth==true}},'fb-al':day.date && {{day.date==activeDate}}}" ng-click="showOneDay(day.date,day.daytype,day.giftday);">
+                                {{day.day}}
+                                <div ng-if="day.daytype=='1'" class="fb37"></div>
+                                <div ng-if="day.giftday=='2'" class="gift_all"></div>
+                                <div ng-if="day.giftday=='1'" class="gift"></div>
+                            </div>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="sign_day">
+        <div class="mrt">
+            <div class="sign0">
+                <div class="sig_lt0"></div>
+                <div class="sig_txt">已连续签到</div>
+                <div class="sig_rt0"><abbr>{{daysSign}}</abbr>天</div>
+            </div>
+            <div class="sign1">
+                <div class="sig_lt1"></div>
+                <div class="sig_txt">已获得积分</div>
+                <div class="sig_rt0"><abbr>{{points}}</abbr>积分</div>
+            </div>
+        </div>
+    </div>
+    <p style="font-size:0.85em;line-height:50px;color:#bdbdbd;text-indent:0.5em;">友情提示：连续签到7天有礼品相送哦，么么哒！</p>
+    <div ng-show="loading" class="app-content-loading">
+        <i class="fa fa-spinner fa-spin loading-spinner"></i>
+    </div>
+    <div ui-content-for="modals">
+
+          <div ng-include="'/webapp/m/bk/common.html'"></div>
+
+    </div>
+</div>
+
